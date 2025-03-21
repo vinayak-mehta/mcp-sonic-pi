@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-sonic-pi"
+version = "0.1.0"
+description = "Sonic Pi MCP for Claude"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=0.1.0",
+    "python-dotenv>=1.0.0",
+    "fastapi>=0.109.0",
+    "uvicorn>=0.27.0",
+    "rich>=13.9.4",
+    "python-osc>=1.9.3",
+    "anthropic>=0.49.0",
+    "prompt-toolkit>=3.0.50",
+    "ipython>=9.0.2",
+    "python-sonic>=0.4.4",
+]
+
+[project.scripts]
+mcp-sonic-pi = "mcp_sonic_pi.server:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["mcp_sonic_pi"]
