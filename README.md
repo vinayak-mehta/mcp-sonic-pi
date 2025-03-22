@@ -2,6 +2,8 @@
 
 **mcp-sonic-pi** connects any MCP client with [Sonic Pi](https://sonic-pi.net/) enabling you to create music with English.
 
+[📺 Demo](https://x.com/vortex_ape/status/1903470754999463969)
+
 ## Requirements
 
 - Python 3.10+
