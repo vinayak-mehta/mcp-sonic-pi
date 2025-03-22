@@ -8,7 +8,6 @@ import subprocess
 
 from mcp.server.fastmcp import Context, FastMCP
 
-# Initialize FastMCP server
 mcp = FastMCP("sonic-pi")
 
 
@@ -16,7 +15,7 @@ def check_sonic_pi_running():
     """Check if Sonic Pi is running on the system"""
     system = platform.system()
 
-    if system == "Darwin":  # macOS
+    if system == "Darwin":
         result = subprocess.run(
             ["pgrep", "-x", "Sonic Pi"], capture_output=True, text=True
         )
@@ -25,7 +24,6 @@ def check_sonic_pi_running():
     return False
 
 
-# Try to import psonic, install if not available
 try:
     from psonic import *
 
@@ -290,7 +288,6 @@ def main():
 
     print("Sonic Pi MCP Server initialized")
 
-    # Run the MCP server
     mcp.run(transport="stdio")
 
 

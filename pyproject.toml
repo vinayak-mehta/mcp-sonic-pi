@@ -1,28 +1,41 @@
-[build-system]
-requires = ["setuptools>=42", "wheel"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "mcp-sonic-pi"
 version = "0.1.0"
-description = "Sonic Pi MCP for Claude"
-requires-python = ">=3.11"
+description = "MCP server for Sonic Pi"
+requires-python = ">=3.10"
+authors = [
+    {name = "Vinayak Mehta", email = "vmehta94@gmail.com"},
+]
 dependencies = [
     "mcp>=0.1.0",
     "python-dotenv>=1.0.0",
     "fastapi>=0.109.0",
     "uvicorn>=0.27.0",
-    "rich>=13.9.4",
     "python-osc>=1.9.3",
-    "anthropic>=0.49.0",
-    "prompt-toolkit>=3.0.50",
-    "ipython>=9.0.2",
     "python-sonic>=0.4.4",
     "ruff>=0.11.2",
 ]
+readme = "README.md"
+license = {text = "Apache-2.0"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: Apache Software License",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/vinayak-mehta/mcp-sonic-pi"
+"Bug Tracker" = "https://github.com/vinayak-mehta/mcp-sonic-pi/issues"
 
 [project.scripts]
 mcp-sonic-pi = "mcp_sonic_pi.server:main"
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
