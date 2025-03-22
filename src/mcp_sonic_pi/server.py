@@ -67,8 +67,13 @@ async def play_music(code: str) -> str:
     Returns:
         A confirmation message
     """
-    if not check_sonic_pi_running() or not PSONIC_AVAILABLE:
-        return "Please call initialize_sonic_pi first before playing music."
+    if not check_sonic_pi_running():
+        return "Error: Sonic Pi does not appear to be running. Please start Sonic Pi first."
+
+    if not PSONIC_AVAILABLE:
+        return (
+            "Error: The psonic library couldn't be initialized. Check Sonic Pi status."
+        )
 
     try:
         stop()
@@ -86,8 +91,13 @@ async def stop_music() -> str:
     Returns:
         A confirmation message
     """
-    if not check_sonic_pi_running() or not PSONIC_AVAILABLE:
-        return "Please call initialize_sonic_pi first before stopping music."
+    if not check_sonic_pi_running():
+        return "Error: Sonic Pi does not appear to be running. Please start Sonic Pi first."
+
+    if not PSONIC_AVAILABLE:
+        return (
+            "Error: The psonic library couldn't be initialized. Check Sonic Pi status."
+        )
 
     try:
         stop()
